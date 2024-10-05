@@ -1,0 +1,14 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .  # El contexto es la raíz del proyecto
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - .:/app  # Monte el código local dentro del contenedor
+      - /app/node_modules  # Excluye node_modules local para usar los del contenedor
+    command: npm run dev  # Ejecutar nodemon para recarga automática
