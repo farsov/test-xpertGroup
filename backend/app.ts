@@ -4,6 +4,7 @@ import connectDB from "./src/utils/mongoDB";
 import userRoutes from './src/config/routes';
 import catRoutes from './src/config/routes';
 import imagesRoutes from './src/config/routes';
+import cors from 'cors';
 
 dotenv.config();
 
@@ -11,6 +12,12 @@ connectDB()
 
 const app = express();
 
+const corsOptions = {
+    origin: 'http://localhost:4200',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+};
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
