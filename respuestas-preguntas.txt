@@ -1,0 +1,55 @@
+1. Describa la diferencia entre app.use() y app.get() en Express.
+    R//:
+    el app.use(), se usa para definir un middleware en la function, q tiene un request y response
+    el app.get(), se usa para definir una ruta especifica
+
+2. Describa qu« es y cómo funciona un sistema de ruteo en Express.
+5. Describa qu« es y cómo funciona un sistema de ruteo en Angular
+    R//: permite gestionar las solicitudes HTTPS de la aplicacion y estas se definen usando los metodos
+    app.get(), app.post(), app.put(), app.delete(), con sus req y res
+
+3. Describa qu« son los CORS y cómo se pueden configurar en una aplicación
+Express.
+    R//: Es un mecanismo de seguridad  q se implementa para controlar quien puede acceder y utilizar los recursos
+    y metodos https
+    para su uso se instala npm install cors, y se configura quien puede usar los recursos
+
+    app.use(cors({
+        origin: 'url-origen',
+        methods: ['GET', 'POST'],
+        allowedHeaders: ['Content-Type', 'Authorization']
+    }));
+
+4. Describa el ciclo de vida de un componente en angular.
+    R//: Angular maneja distinto ciclos de vida en u componente desde su llamado  hasta su terminacion,
+    primero ejecuta el constructor, antes de la ejecucion de cualquier otro metodo, y despues de este ejecuta sus metodos
+    com ngOnChanges, ngOnInit, ngDoCheck, ngAfterContentInit, ngAfterContentChecked, ngAfterViewInit, ngAfterViewChecked, ngOnDestroy
+
+
+6. Describa el patrón Observable y su uso en Angular
+    R//: Es un patron basado en eventos, donde esta el sujeto y los observadores, q permite manejar flujos asincronicos,
+    susbcribiendose a este
+
+    se importa el import { Observable } from 'rxjs';
+
+    se crea una clase el cual va ser el observable y va recibir el llamado por eventos
+    y en los componentes se susbcripbe al evento , una vez finalizado tambien debe de unsubcripbe
+
+
+7. Especifique la división de capas en Express y Angular y agregue una descripción por cada una de estas.
+
+capas de Express
+
+presentacion: sirve los archivos estaticos, se encarga de la interfaz del usuario e iteracion con el cliente
+controladores: encargado del manejo de las solicitudes del cliente y contienen la logica de negocio
+servicios: encapsula la logia de negocio, manejos de cruds, o llamado a apis externas
+modelos: es la estrutuctracion de los datos
+rutas: se encarga de la definicio de como se va a comunicar con los controladores
+
+capas angular
+
+presentacion: reponsable de la interfaz de usuario UI
+servicios: se encarga de la comunicacion con las apis del backend o externas
+interfaces: decripbe la estructura de los datos
+ruteo: encargado de la navegacion entre las distintas vistas y componentes de la aplicacion
+configuracion (config): administracion general de la aplicacion, configuracion los env, guard, middelware
